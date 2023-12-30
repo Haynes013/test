@@ -26,7 +26,9 @@ user = calculate_score(user_cards)
 computer = calculate_score(computer_cards)
 
 if user == 0 or computer == 0 or user > 21:
-  print("Game Over")
+  print("Game Over As Soon As It Started!")
+  print(f"Your cards: {user_cards}, Total: {user}")
+  print(f"Computer's cards: {computer_cards}, Total: {computer}")
   if user == 0:
     print("You Win")
   elif computer == 0:
