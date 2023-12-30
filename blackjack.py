@@ -22,3 +22,29 @@ def calculate_score(hand_cards):
     return hand 
 
   
+user = calculate_score(user_cards)
+computer = calculate_score(computer_cards)
+
+if user == 0 or computer == 0 or user > 21:
+  print("Game Over")
+  if user == 0:
+    print("You Win")
+  elif computer == 0:
+    print("You Lose")
+  elif user > 21:
+    print("You Lose")
+  game_continue != True
+else:
+  print(f"Your cards: {user_cards}, current score: {user}")
+  print(f"Computer's first card:{computer_cards[0]}")
+  game_continue = True
+
+  while game_continue:
+    user_choice = input("Type 'y' to get another card, type 'n' to pass:").lower()
+    if user_choice == "y":
+      user_cards.append(deal_card())
+      user = calculate_score(user_cards)
+      print(f"Your cards are now: {user_cards} and your score is {user}")
+    else:
+      print("You've passed, lets check on the dealer")
+      game_continue = False
