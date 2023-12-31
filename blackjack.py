@@ -50,3 +50,11 @@ else:
     else:
       print("You've passed, lets check on the dealer")
       game_continue = False
+      
+if computer < 17:
+  while computer < 17:
+    computer_cards.append(deal_card())
+    computer = calculate_score(computer_cards)
+    print(f"Computer's cards are now: {computer_cards} and their score is {computer}")
+else:
+  print(f"Computer's cards are now: {computer_cards} and their score is {computer}")
